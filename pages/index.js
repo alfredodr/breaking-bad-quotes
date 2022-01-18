@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-//import QuoteApp from "../components/home/QuoteApp";
-//import bb from "../public/bb.svg";
+import QuoteApp from "../components/home/QuoteApp";
 
 export default function Home() {
   return (
@@ -9,8 +8,9 @@ export default function Home() {
       <Head>
         <title>Breaking bad App</title>
         <meta name="description" content="Get Breaking Bad Quotes, see recent, favorites, archive quotes" />
-        <link rel="icon" href="/bb.svg" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
+      <QuoteApp />
     </div>
   )
 }
