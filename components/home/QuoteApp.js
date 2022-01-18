@@ -1,5 +1,5 @@
 import styles from "../../styles/Home.module.css";
-import { Paper } from "@mui/material";
+import { Box } from "@mui/material";
 import useQuoteState from "../../hooks/useQuoteState";
 import GetQuote from "./GetQuote";
 import ShowSpeedDial from "./ShowSpeedDial";
@@ -15,7 +15,7 @@ const QuoteApp = () => {
 
     return (
         <>
-            <Paper className={styles.quote_info_container}>
+            <Box className={styles.quote_info_container}>
                 <GetQuote
                     getData={getData}
                     imgSrc={imgSrc}
@@ -41,7 +41,7 @@ const QuoteApp = () => {
                 <Archive
                     archiveQuotes={archiveQuotes}
                     archives={archives} />
-            </Paper>
+            </Box>
         </>
     );
 };
