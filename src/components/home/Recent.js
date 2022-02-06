@@ -19,7 +19,7 @@ const Recent = () => {
   const allQuotes = quotes.map(function (item, index) {
     return (
       <List key={index}>
-        <p className="quote">"{item.quote}."</p>
+        <p className="quote">{item.quote}</p>
         <ListItem className="author-container">
           <ListItemAvatar>
             <Avatar
@@ -28,7 +28,7 @@ const Recent = () => {
               sx={{ width: 56, height: 56 }}
             />
           </ListItemAvatar>
-          <ListItemText className="author-text">{item.author}.</ListItemText>
+          <ListItemText className="author-text">{item.author}</ListItemText>
         </ListItem>
         <ListItemSecondaryAction>
           <IconButton

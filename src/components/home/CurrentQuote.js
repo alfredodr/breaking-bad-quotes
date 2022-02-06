@@ -25,7 +25,7 @@ export default function CurrentQuote() {
   let currentQuote = lastQuote.map(function (item) {
     return (
       <List key={item.id}>
-        <p className="quote">"{item.quote}."</p>
+        <p className="quote">{item.quote}</p>
         <ListItem className="author-container">
           <ListItemAvatar>
             <Avatar
@@ -34,7 +34,7 @@ export default function CurrentQuote() {
               sx={{ width: 56, height: 56 }}
             />
           </ListItemAvatar>
-          <ListItemText className="author-text">{item.author}.</ListItemText>
+          <ListItemText className="author-text">{item.author}</ListItemText>
         </ListItem>
       </List>
     );

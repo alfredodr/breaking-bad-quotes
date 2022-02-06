@@ -32,7 +32,7 @@ const Favorite = () => {
     return (
       <Box key={index}>
         <List key={index}>
-          <ListItemText className="quote">"{item.quote}."</ListItemText>
+          <ListItemText className="quote">{item.quote}</ListItemText>
           <ListItem className="author-container">
             <ListItemAvatar>
               <Avatar
@@ -41,7 +41,7 @@ const Favorite = () => {
                 sx={{ width: 56, height: 56 }}
               />
             </ListItemAvatar>
-            <ListItemText className="author-text">{item.author}.</ListItemText>
+            <ListItemText className="author-text">{item.author}</ListItemText>
           </ListItem>
           <ListItemSecondaryAction>
             <IconButton
