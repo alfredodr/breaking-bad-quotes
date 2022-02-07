@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { ManageQuotesContext } from "../../contexts/quotes.context";
 import axios from "axios";
 import CurrentQuote from "./CurrentQuote";
-import { memo } from "react";
 
 const GetQuote = () => {
   const dispatch = useContext(ManageQuotesContext);
@@ -19,7 +18,7 @@ const GetQuote = () => {
 
       let author = newQuote.author;
 
-      const makeImage = (quoteAuthor) => {
+      const makeImage = () => {
         if (author === "Walter White") {
           image =
             "https://static.wikia.nocookie.net/breakingbad/images/e/e7/BB-S5B-Walt-590.jpg";
@@ -105,4 +104,4 @@ const GetQuote = () => {
   );
 };
 
-export default memo(GetQuote);
+export default GetQuote;

@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import { useContext } from "react";
+import { useContext, memo } from "react";
 import { QuotesContext } from "../../contexts/quotes.context";
 import { ManageQuotesContext } from "../../contexts/quotes.context";
 import { List } from "@mui/material";
@@ -10,8 +10,10 @@ import { Avatar } from "@mui/material";
 import { ListItemSecondaryAction } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
+import { Favorite } from "@mui/icons-material";
+import ArchiveIcon from "@mui/icons-material/Archive";
 
-const Recent = () => {
+const Recents = () => {
   const quotes = useContext(QuotesContext);
 
   const dispatch = useContext(ManageQuotesContext);
@@ -30,7 +32,7 @@ const Recent = () => {
           </ListItemAvatar>
           <ListItemText className="author-text">{item.author}</ListItemText>
         </ListItem>
-        <ListItemSecondaryAction>
+        <ListItemSecondaryAction style={{ marginLeft: "1rem" }}>
           <IconButton
             aria-label="Delete"
             onClick={() => {
@@ -38,6 +40,22 @@ const Recent = () => {
             }}
           >
             <Delete />
+          </IconButton>
+          <IconButton
+            aria-label="Favorite"
+            onClick={() => {
+              dispatch({ type: "FAVORITE", quoteId: item.id });
+            }}
+          >
+            <Favorite />
+          </IconButton>
+          <IconButton
+            aria-label="Archive"
+            onClick={() => {
+              dispatch({ type: "ARCHIVE", quoteId: item.id });
+            }}
+          >
+            <ArchiveIcon />
           </IconButton>
         </ListItemSecondaryAction>
       </List>
@@ -47,6 +65,6 @@ const Recent = () => {
   return <Box component="div">{allQuotes}</Box>;
 };
 
-export default Recent;
+export default memo(Recents);
 
 //{ recentQuotes, quotes }

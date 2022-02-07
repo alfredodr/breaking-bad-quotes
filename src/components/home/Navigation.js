@@ -10,7 +10,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ArchiveIcon from "@mui/icons-material/Archive";
 import { QuotesContext } from "../../contexts/quotes.context";
 import { ManageQuotesContext } from "../../contexts/quotes.context";
-import Recent from "./Recent";
+import Recents from "./Recents";
 import Favorite from "./Favorite";
 import Archive from "./Archive";
 
@@ -128,10 +128,10 @@ const Navigation = () => {
     <>
       <Box component="div">
         {quotes.length !== 0 ? showBottomNavigation() : null}
-        {recentQuotes === true ? <Recent /> : null}
-        {favoriteQuotes === true ? <Favorite /> : null}
-        {archiveQuotes === true ? <Archive /> : null}
       </Box>
+      {recentQuotes === true ? <Recents /> : null}
+      {favoriteQuotes === true ? <Favorite /> : null}
+      {archiveQuotes === true ? <Archive /> : null}
     </>
   );
 };
