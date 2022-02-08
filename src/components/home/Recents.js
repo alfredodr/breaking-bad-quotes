@@ -12,6 +12,7 @@ import { Delete } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { Favorite } from "@mui/icons-material";
 import ArchiveIcon from "@mui/icons-material/Archive";
+import styles from "../../../styles/Home.module.css";
 
 const Recents = () => {
   const quotes = useContext(QuotesContext);
@@ -21,8 +22,8 @@ const Recents = () => {
   const allQuotes = quotes.map(function (item, index) {
     return (
       <List key={index}>
-        <p className="quote">{item.quote}</p>
-        <ListItem className="author-container">
+        <ListItemText className={styles.quote_text}>{item.quote}</ListItemText>
+        <ListItem className={styles.author_container}>
           <ListItemAvatar>
             <Avatar
               alt={item.author}
@@ -30,9 +31,9 @@ const Recents = () => {
               sx={{ width: 56, height: 56 }}
             />
           </ListItemAvatar>
-          <ListItemText className="author-text">{item.author}</ListItemText>
-        </ListItem>
-        <ListItemSecondaryAction style={{ marginLeft: "1rem" }}>
+          <ListItemText className={styles.author_text}>
+            {item.author}
+          </ListItemText>
           <IconButton
             aria-label="Delete"
             onClick={() => {
@@ -57,7 +58,7 @@ const Recents = () => {
           >
             <ArchiveIcon />
           </IconButton>
-        </ListItemSecondaryAction>
+        </ListItem>
       </List>
     );
   });

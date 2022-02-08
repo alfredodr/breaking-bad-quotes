@@ -6,6 +6,7 @@ import { ListItemAvatar } from "@mui/material";
 import { Avatar } from "@mui/material";
 import { QuotesContext } from "../../contexts/quotes.context";
 import { useContext } from "react";
+import styles from "../../../styles/Home.module.css";
 
 export default function CurrentQuote() {
   const quotes = useContext(QuotesContext);
@@ -25,7 +26,7 @@ export default function CurrentQuote() {
   let currentQuote = lastQuote.map(function (item) {
     return (
       <List key={item.id}>
-        <p className="quote">{item.quote}</p>
+        <p className={styles.quote_text}>{item.quote}</p>
         <ListItem className="author-container">
           <ListItemAvatar>
             <Avatar
@@ -34,7 +35,9 @@ export default function CurrentQuote() {
               sx={{ width: 56, height: 56 }}
             />
           </ListItemAvatar>
-          <ListItemText className="author-text">{item.author}</ListItemText>
+          <ListItemText className={styles.author_text}>
+            {item.author}
+          </ListItemText>
         </ListItem>
       </List>
     );

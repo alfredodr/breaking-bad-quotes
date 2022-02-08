@@ -7,9 +7,9 @@ import { ListItemText } from "@mui/material";
 import { ListItem } from "@mui/material";
 import { ListItemAvatar } from "@mui/material";
 import { Avatar } from "@mui/material";
-import { ListItemSecondaryAction } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
+import styles from "../../../styles/Home.module.css";
 
 const Favorite = () => {
   const quotes = useContext(QuotesContext);
@@ -30,31 +30,29 @@ const Favorite = () => {
 
   favorites = selectFavoriteQuotes.map(function (item, index) {
     return (
-      <Box key={index}>
-        <List key={index}>
-          <ListItemText className="quote">{item.quote}</ListItemText>
-          <ListItem className="author-container">
-            <ListItemAvatar>
-              <Avatar
-                alt={item.author}
-                src={item.imgSrc}
-                sx={{ width: 56, height: 56 }}
-              />
-            </ListItemAvatar>
-            <ListItemText className="author-text">{item.author}</ListItemText>
-          </ListItem>
-          <ListItemSecondaryAction>
-            <IconButton
-              aria-label="Delete"
-              onClick={() => {
-                dispatch({ type: "FAVORITE", quoteId: item.id });
-              }}
-            >
-              <Delete />
-            </IconButton>
-          </ListItemSecondaryAction>
-        </List>
-      </Box>
+      <List key={index}>
+        <ListItemText className={styles.quote_text}>{item.quote}</ListItemText>
+        <ListItem className={styles.author_container}>
+          <ListItemAvatar>
+            <Avatar
+              alt={item.author}
+              src={item.imgSrc}
+              sx={{ width: 56, height: 56 }}
+            />
+          </ListItemAvatar>
+          <ListItemText className={styles.author_text}>
+            {item.author}
+          </ListItemText>
+          <IconButton
+            aria-label="Remove favorite"
+            onClick={() => {
+              dispatch({ type: "FAVORITE", quoteId: item.id });
+            }}
+          >
+            <Delete />
+          </IconButton>
+        </ListItem>
+      </List>
     );
   });
 

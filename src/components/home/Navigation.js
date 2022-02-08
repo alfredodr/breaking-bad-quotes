@@ -30,7 +30,7 @@ const Navigation = () => {
   const userAction = [
     {
       icon: (
-        <Badge badgeContent={recentCount} color="secondary">
+        <Badge badgeContent={recentCount} color="success">
           <RestoreIcon />
         </Badge>
       ),
@@ -39,7 +39,7 @@ const Navigation = () => {
     },
     {
       icon: (
-        <Badge badgeContent={favoriteCount.length} color="secondary">
+        <Badge badgeContent={favoriteCount.length} color="success">
           <FavoriteIcon />
         </Badge>
       ),
@@ -48,7 +48,7 @@ const Navigation = () => {
     },
     {
       icon: (
-        <Badge badgeContent={archiveCount.length} color="secondary">
+        <Badge badgeContent={archiveCount.length} color="success">
           <ArchiveIcon />
         </Badge>
       ),
