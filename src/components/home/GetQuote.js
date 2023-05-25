@@ -12,7 +12,7 @@ const GetQuote = () => {
   const handleGetQuote = async () => {
     try {
       const { data } = await axios.get(
-        "https://www.breakingbadapi.com/api/quote/random"
+        "https://api.breakingbadquotes.xyz/v1/quotes"
       );
       let newQuote = data[0];
 
@@ -85,8 +85,6 @@ const GetQuote = () => {
       return `No quotes available due to ${error}`;
     }
   };
-
-  //console.log(quotes);
 
   return (
     <>
